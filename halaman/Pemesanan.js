@@ -122,7 +122,7 @@ const data3 = [
           <Text style={{paddingLeft:25}}>kelas Keberangkatan</Text>
           <View style={{flexDirection: 'row', width:"90%",alignItems:"center",paddingLeft:25}}>
             <Image 
-            source={require('../assets/kapal.png')} 
+            source={require('../assets/penumpang.png')} 
             style={styles.imageStyle}
             />
           <ModalSelector
@@ -144,7 +144,7 @@ const data3 = [
           <Text style={{paddingLeft:25}}>Lokasi Tujuan</Text>
           <View style={{flexDirection: 'row', width:"90%",alignItems:"center",paddingLeft:25}}>
             <Image 
-            source={require('../assets/kapal.png')} 
+            source={require('../assets/tanggal.png')} 
             style={styles.imageStyle}
           />  
           <ModalSelector
@@ -166,7 +166,7 @@ const data3 = [
           <Text style={{paddingLeft:25}}>Lokasi Tujuan</Text>
           <View style={{flexDirection: 'row', width:"90%",alignItems:"center",paddingLeft:25}}>
             <Image 
-            source={require('../assets/kapal.png')} 
+            source={require('../assets/jam.png')} 
             style={styles.imageStyle}
           />  
           <ModalSelector
