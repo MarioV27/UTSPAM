@@ -1,20 +1,64 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Pemesanan from './halaman/Pemesanan';
+import Detail from './halaman/Detail';
+import Konfirmasi from './halaman/Konfirmasi';
+import Konfirmasi2 from './halaman/Konfirmasi2';
+import riwayat from './halaman/History';
+import pembatalan from './halaman/Pembatalan';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function MyStack(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  <Stack.Navigator
+      initialRouteName={"Home"}
+        screenOptions={{
+          headerShown: false,
+          headerTitleAlign: 'center',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: '#86B257',
+          },
+        }}
+      >
+        <Stack.Screen 
+          name="Home" 
+          component={Pemesanan} 
+          />
+        <Stack.Screen 
+          name="konfirmasi" 
+          component={Konfirmasi} 
+          />
+        <Stack.Screen 
+          name="konfirmasi2" 
+          component={Konfirmasi2} 
+          />
+        <Stack.Screen 
+          name="riwayat" 
+          component={riwayat} 
+          />
+        <Stack.Screen 
+          name="detail" 
+          component={Detail} 
+          />
+        <Stack.Screen 
+          name="batal" 
+          component={pembatalan} 
+          />
+      </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
